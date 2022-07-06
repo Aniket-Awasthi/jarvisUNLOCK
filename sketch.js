@@ -5,14 +5,17 @@ var height;
 var balloonHeight
 var lock;
 var unlock;
-
+var w;
 var canva;
-
+var q;
 
 
 function preload() {
   lock = loadImage("lock.png");
   unlock = loadImage("unlock.png");
+  w = loadSound("w.wav");
+  q = loadSound("q.wav");
+
 }
 
 function setup() {
@@ -41,10 +44,11 @@ function draw() {
 function changeBG() {
   if (height === false) {
     updateHeight(true);
-
+w.play();
 
   } else if (height === true) {
     updateHeight(false);
+q.play();
   }
 
 }
